@@ -1,0 +1,11 @@
+de\ps1ttacus\SyntaxTree\TreeGenerator.class
+module-info.class
+de\ps1ttacus\Ableitungsfolge\Ableitungsfolge.class
+test\BeispielwoerterGenerierungTest.class
+de\ps1ttacus\SyntaxTree\TreeNode.class
+de\ps1ttacus\bachelorarbeit\ContextFreeApplication.class
+de\ps1ttacus\bachelorarbeit\Model.class
+de\ps1ttacus\SyntaxTree\TreeVisualization.class
+de\ps1ttacus\MainClass.class
+de\ps1ttacus\bachelorarbeit\Controller.class
+de\ps1ttacus\Beispielwoerter\BeispielwoerterGenerierung.class

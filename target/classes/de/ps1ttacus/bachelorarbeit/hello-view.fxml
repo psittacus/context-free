@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<HBox fx:id="contentHBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.ps1ttacus.bachelorarbeit.Controller">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="300.0" style="-fx-border-color: grey; -fx-border-width: 1; -fx-border-style: solid; -fx-background-color: white;">
+         <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="NEVER">
+            <children>
+               <VBox prefHeight="200.0" prefWidth="100.0">
+                  <children>
+                      <VBox prefHeight="200.0" prefWidth="100.0">
+                          <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0">
+                                  <children>
+                                 <Label fx:id="terminaleLabel" prefWidth="200.0" text="Terminale" textOverrun="CLIP" wrapText="true">
+                                    <font>
+                                       <Font size="18.0" />
+                                    </font>
+                                 </Label>
+                                      <TextField fx:id="terminaleInput" onMouseExited="#setTerminale" text="a,b" HBox.hgrow="ALWAYS">
+                                          <font>
+                                              <Font size="18.0" />
+                                          </font>
+                                      </TextField>
+                                  </children>
+                              <opaqueInsets>
+                                 <Insets />
+                              </opaqueInsets>
+                              </HBox>
+                          </children>
+                      </VBox>
+                  </children>
+               </VBox>
+                <VBox prefHeight="200.0" prefWidth="100.0">
+                    <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0">
+                            <children>
+                           <Label prefWidth="200.0" text="Nichtterminale" textOverrun="CLIP" wrapText="true">
+                              <font>
+                                 <Font size="18.0" />
+                              </font>
+                           </Label>
+                                <TextField fx:id="nichtterminaleInput" onMouseExited="#setNichtterminale" text="S,A,B" HBox.hgrow="ALWAYS">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+                <VBox prefHeight="200.0" prefWidth="100.0">
+                    <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0">
+                            <children>
+                           <Label prefWidth="200.0" text="Startsymbol" textOverrun="CLIP" wrapText="true">
+                              <font>
+                                 <Font size="18.0" />
+                              </font>
+                           </Label>
+                                <TextField fx:id="startsymbolInput" onKeyReleased="#setStartsymbol" text="S" HBox.hgrow="ALWAYS">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+         </VBox>
+         <ScrollPane fx:id="productionRulesScrollpane" hbarPolicy="NEVER" onMouseExited="#prScrollPaneOnMouseExited" prefWidth="200.0" VBox.vgrow="ALWAYS">
+            <content>
+               <VBox fx:id="productionRulesVBox" alignment="TOP_CENTER" prefHeight="200.0">
+                  <children>
+                     <Button fx:id="addProductionRule" mnemonicParsing="false" onMouseClicked="#addProductionRule" text="+" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                        <font>
+                           <Font size="18.0" />
+                        </font>
+                     </Button>
+                  </children>
+               </VBox>
+            </content>
+         </ScrollPane>
+         <Button fx:id="speichereProduktionen" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#saveProductionRules" text="Übernehme Produktionen" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+            <font>
+               <Font size="18.0" />
+            </font>
+         </Button>
+      </VBox>
+       <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+           <children>
+               <Pane fx:id="pane" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+            <ScrollPane fitToWidth="true" hbarPolicy="ALWAYS" vbarPolicy="NEVER" VBox.vgrow="NEVER">
+               <content>
+                  <HBox fx:id="ableitungsfolgeHBox" alignment="CENTER_LEFT" />
+               </content>
+            </ScrollPane>
+               <VBox prefWidth="100.0" style="-fx-border-color: grey; -fx-border-width: 1; -fx-border-style: solid; -fx-background-color: white;" VBox.vgrow="NEVER">
+                   <children>
+                       <HBox alignment="CENTER_LEFT" prefWidth="200.0" VBox.vgrow="NEVER">
+                           <children>
+                               <Label minWidth="-Infinity" prefWidth="240.0" text="Testwörter" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" HBox.hgrow="ALWAYS">
+                                   <font>
+                                       <Font size="18.0" />
+                                   </font>
+                                   <HBox.margin>
+                                       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                   </HBox.margin>
+                               </Label>
+                               <ScrollPane fx:id="testwortScrollpane" focusTraversable="false" hbarPolicy="ALWAYS" vbarPolicy="NEVER" HBox.hgrow="ALWAYS">
+                                   <content>
+                                       <HBox fx:id="testwortHBox" alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" spacing="2.0">
+                                           <children>
+                                               <Button fx:id="testwortPlus" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#addTestwort" snapToPixel="false" text="+" textAlignment="CENTER">
+                                                   <font>
+                                                       <Font size="18.0" />
+                                                   </font>
+                                                   <opaqueInsets>
+                                                       <Insets />
+                                                   </opaqueInsets>
+                                                   <HBox.margin>
+                                                       <Insets left="5.0" right="5.0" />
+                                                   </HBox.margin>
+                                               </Button>
+                                           </children>
+                                           <opaqueInsets>
+                                               <Insets />
+                                           </opaqueInsets>
+                                       </HBox>
+                                   </content>
+                                   <opaqueInsets>
+                                       <Insets />
+                                   </opaqueInsets>
+                                   <HBox.margin>
+                                       <Insets />
+                                   </HBox.margin>
+                                   <padding>
+                                       <Insets top="1.0" />
+                                   </padding>
+                               </ScrollPane>
+                           </children>
+                           <VBox.margin>
+                               <Insets />
+                           </VBox.margin>
+                           <padding>
+                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                       </HBox>
+                       <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefWidth="200.0" VBox.vgrow="NEVER">
+                           <children>
+                               <Label layoutX="10.0" layoutY="17.0" minWidth="-Infinity" prefWidth="240.0" text="Erzeugbare Wörter" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" HBox.hgrow="ALWAYS">
+                                   <font>
+                                       <Font size="18.0" />
+                                   </font>
+                                   <HBox.margin>
+                                       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                   </HBox.margin>
+                               </Label>
+                               <ScrollPane fx:id="erzeugbareWoerter" focusTraversable="false" hbarPolicy="ALWAYS" vbarPolicy="NEVER" HBox.hgrow="NEVER">
+                                   <content>
+                                       <HBox fx:id="erzeugbareWoerterHBox" alignment="CENTER_LEFT" fillHeight="false" layoutX="10.0" layoutY="10.0" spacing="2.0">
+                                           <children>
+                                           </children>
+                                       </HBox>
+                                   </content>
+                                   <opaqueInsets>
+                                       <Insets />
+                                   </opaqueInsets>
+                           <padding>
+                              <Insets top="1.0" />
+                           </padding>
+                               </ScrollPane>
+                           </children>
+                           <padding>
+                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                       </HBox>
+                       <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="103.0" prefWidth="200.0" VBox.vgrow="NEVER">
+                           <children>
+                               <Label minWidth="-Infinity" prefWidth="240.0" text="Wörter nicht in der Sprache" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" HBox.hgrow="ALWAYS">
+                                   <font>
+                                       <Font size="18.0" />
+                                   </font>
+                                   <HBox.margin>
+                                       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                   </HBox.margin>
+                               </Label>
+                               <ScrollPane focusTraversable="false" hbarPolicy="ALWAYS" vbarPolicy="NEVER" HBox.hgrow="ALWAYS">
+                                   <content>
+                                       <HBox fx:id="woerterNichtInDerSpracheHBox" alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0">
+                                           <children>
+                                               <Button fx:id="woerterNichtInDerSpracheBtn" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#addWordNotInLanguage" snapToPixel="false" text="+" textAlignment="CENTER">
+                                                   <font>
+                                                       <Font size="18.0" />
+                                                   </font>
+                                                   <opaqueInsets>
+                                                       <Insets />
+                                                   </opaqueInsets>
+                                                   <HBox.margin>
+                                                       <Insets left="5.0" right="5.0" />
+                                                   </HBox.margin>
+                                               </Button>
+                                           </children>
+                                       </HBox>
+                                   </content>
+                                   <opaqueInsets>
+                                       <Insets />
+                                   </opaqueInsets>
+                                   <padding>
+                                       <Insets top="1.0" />
+                                   </padding>
+                               </ScrollPane>
+                           </children>
+                           <padding>
+                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                       </HBox>
+                   </children>
+               </VBox>
+           </children></VBox>
+   </children>
+</HBox>
