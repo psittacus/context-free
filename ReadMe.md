@@ -1,25 +1,16 @@
-   context-free
-   ------------
-   Voraussetzungen
-   ---------------
+# context-free
+---
+## Voraussetzungen
 Unterstützt werden aktuell die Plattformen Windows, Linux und Mac.
 Benötigt wird Java in der Version 11 oder höher.
 
-   Starten der Anwendung
-   ---------------------
+## Starten der Anwendung
 Öffnen Sie zunächst Ihr Terminal/CMD Fenster und navigieren in den Ordner, 
 in welchem sich die Datei context-free-1.0-SNAPSHOT.jar befindet.
 
 Zum Starten der Anwendung benutzen Sie folgenden Befehl:
-  java -jar context-free-1.0-SNAPSHOT.jar
-
-   Bedienungshinweise
-   ------------------
-Der aktuelle Stand ist ein Snapshot - eine Vorabversion. 
-Es kann weder für Stabilität noch für Vollständigkeit garantiert werden.
-Grundlegende Features sind allerdings bereits entwickelt worden, womit die Anwendung bereits für einige Tests zum Einsatz kommen kann.
-Vorsicht: Linksrekursive Produktionen führen aktuell noch zu einem Absturz der Anwendung!
-
+`java -jar context-free-1.0-SNAPSHOT.jar`
+## Bedienungshinweise
 * Eingabe von Terminalen und Nichtterminalen
 	Um Terminale und Nichtterminale zu definieren, geben Sie diese Kommasepariert in die entsprechenden Felder ein
 * Eingabe von Produktionen
